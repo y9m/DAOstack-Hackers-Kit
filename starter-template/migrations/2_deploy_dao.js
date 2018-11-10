@@ -1,38 +1,43 @@
-var arcContracts = require("../arc.json");
+var arcContracts = require('../arc.json');
 
-var Avatar = artifacts.require("@daostack/arc/Avatar.sol");
-var DaoCreator = artifacts.require("@daostack/arc/DaoCreator.sol");
+var Avatar = artifacts.require('@daostack/arc/Avatar.sol');
+var DaoCreator = artifacts.require('@daostack/arc/DaoCreator.sol');
 
 const GAS_LIMIT = 5900000;
 
 // Organization parameters:
 // The DAO name
-const orgName = "YOUR_DAO";
+const orgName = 'soul-coin';
 // The DAO's token name
-const tokenName = "YOUR_DAO_TOKEN_NAME";
+const tokenName = 'soul-coin';
 // Token symbol
-const tokenSymbol = "YOUR_DAO_TOKEN_SYMBOL";
+const tokenSymbol = 'SOUL';
 // The ethereum addresses of the "founders"
-// TODO: list your accounts to give initial reputation to
-var founders = [];
-// TODO: list the token amount per founder account
+var founders = [
+  '0xb0c908140fe6fd6fbd4990a5c2e35ca6dc12bfb2',
+  '0x9c7f9f45a22ad3d667a5439f72b563df3aa70aae',
+  '0x9c7f9f45a22ad3d667a5439f72b563df3aa70aae',
+  '0x9c7f9f45a22ad3d667a5439f72b563df3aa70aae',
+  '0x9c7f9f45a22ad3d667a5439f72b563df3aa70aae',
+  '0x9c7f9f45a22ad3d667a5439f72b563df3aa70aae'
+];
 // NOTE: the important thing is to make sure the array length match the number of founders
-var foundersTokens = [];
-// TODO: list the reputation amount per founder account
-var foundersRep = [];
+var foundersTokens = [1000, 1000, 1000, 1000, 1000, 1000];
+//reputation per founder
+var foundersRep = [10, 10, 10, 10, 10, 10];
 
 module.exports = async function(deployer) {
   deployer.then(async function() {
     // TODO: edit this switch command based on the comments at the variables decleration lines
     var networkId;
     switch (deployer.network) {
-      case "ganache":
-      case "development":
-        networkId = "ganache";
+      case 'ganache':
+      case 'development':
+        networkId = 'ganache';
         break;
-      case "kovan":
-      case "kovan-infura":
-        networkId = "kovan";
+      case 'kovan':
+      case 'kovan-infura':
+        networkId = 'kovan';
         break;
     }
 

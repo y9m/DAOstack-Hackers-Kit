@@ -1,7 +1,7 @@
 {
-  "name": "YOUR_PROJECT_NAME",
+  "name": "soul-coin",
   "version": "1.0.0",
-  "description": "YOUR_PROJECT_DESCRIPTION",
+  "description": "Souls for charity.",
   "private": true,
   "directories": {
     "test": "test"
@@ -27,8 +27,9 @@
     "@daostack/arc": "0.0.0-alpha.52",
     "@daostack/arc.js": "0.0.0-alpha.79",
     "express": "^4.16.3",
-    "truffle-hdwallet-provider": "0.0.6",
-    "truffle": "^4.1.11"
+    "truffle": "^4.1.11",
+    "truffle-artifactor": "^3.0.7",
+    "truffle-hdwallet-provider": "0.0.6"
   },
   "devDependencies": {
     "webpack": "^4.17.1",
